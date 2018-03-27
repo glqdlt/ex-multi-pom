@@ -35,7 +35,8 @@ public class UserRepoTest {
     public void initData() {
     }
 
-    @Test
+//    10초 타임아웃
+    @Test(timeout = 10000)
     public void saveEntity() {
         String userId = "test-id";
         UserEntity result = userRepo.save(new UserEntity(userId, "test-man", "12345"));
