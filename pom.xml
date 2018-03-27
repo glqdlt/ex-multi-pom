@@ -20,6 +20,7 @@
         <module>common</module>
         <module>simplebatch</module>
         <module>simple-web</module>
+        <module>simpleng</module>
     </modules>
 
     <parent>
