@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--reference-->
+    <!--https://spring.io/guides/gs/multi-module/-->
+    <groupId>com.glqdlt</groupId>
+    <artifactId>ex-multi</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!--<spring-version>1.5.10.RELEASE</spring-version>-->
+    </properties>
+
+    <modules>
+        <module>common</module>
+        <module>simplebatch</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+
+    <!--management를 주석한 것은 이 super.pom 이 위의 parent를 보면 spring-parent라는 version 관리자를 상속받기 때문에 version management를 안해줘도 되서 이렇게함.-->
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter</artifactId>-->
+                <!--<version>${spring-version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-test</artifactId>-->
+                <!--<version>${spring-version}</version>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+
+    <!--</dependencyManagement>-->
+
+    <!--아래는 나의 아티펙트들에 대한 version은 spring-parents에서 관리못해주므로 선언해줌.-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.glqdlt</groupId>
+                <artifactId>common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
