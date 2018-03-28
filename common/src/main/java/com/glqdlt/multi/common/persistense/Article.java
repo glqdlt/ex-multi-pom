@@ -29,6 +29,6 @@ public class Article {
     private String content;
 
 
-//    @OneToMany(mappedBy = "reply")
-//    private List<Reply> reply = new ArrayList<>();
+    @OneToMany(mappedBy = "article")
+    private List<Reply> reply = new ArrayList<>();
 }

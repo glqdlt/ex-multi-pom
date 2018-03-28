@@ -22,10 +22,10 @@ public class Reply {
     @GeneratedValue
     @Id
     private int id;
-//
-//    @ManyToOne
-//    @JoinColumn(name="article_id")
-//    private Article article;
+
+    @ManyToOne
+    @JoinColumn(name="article_id")
+    private Article article;
 
     private String content;
 
