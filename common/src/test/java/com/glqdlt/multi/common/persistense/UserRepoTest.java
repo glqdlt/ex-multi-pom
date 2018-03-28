@@ -1,17 +1,13 @@
 package com.glqdlt.multi.common.persistense;
 
 import lombok.extern.slf4j.Slf4j;
-import org.h2.result.ResultTarget;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.swing.text.html.parser.Entity;
 
 /**
  * Created By iw.jhun
@@ -39,7 +35,7 @@ public class UserRepoTest {
     @Test(timeout = 10000)
     public void saveEntity() {
         String userId = "test-id";
-        UserEntity result = userRepo.save(new UserEntity(userId, "test-man", "12345"));
+        User result = userRepo.save(new User(userId, "test-man", "12345"));
         Assert.assertEquals(userId, result.getUser_id());
     }
 

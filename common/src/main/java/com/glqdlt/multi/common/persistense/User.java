@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @ToString
 @Entity
 @Data
-public class UserEntity {
+public class User {
 
 
     @GeneratedValue
